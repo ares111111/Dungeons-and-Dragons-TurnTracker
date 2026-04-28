@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>D&D Turn Tracker</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Main ---------------- -->
+<div id="main">
+
+	<div id="top-area">
+    
+		<!-- LEFT: TURN LIST -->
+		<div id="initiative-panel">
+			<div id="initiative-list"></div>
+		</div>
+
+		<!-- RIGHT: DISPLAY -->
+		<div id="display-area">
+			<div id="background"></div>
+
+			<img id="character-image" src="" />
+
+			<div id="name-container">
+				<h1 id="character-name"></h1>
+			</div>
+    		</div>
+
+	</div>
+
+<!-- CONTROLS ---------------- -->
+	<div id="controls">
+		<button onclick="prevTurn()">⟵</button>
+		<button onclick="nextTurn()">⟶</button>
+		<button onclick="sortInitiative()">Sort</button>
+
+
+
+<!-- 🏔️Background Select =================================================== -->
+		<select id="themeSelect" onchange="changeTheme()">
+			<option value="theme">Theme</option>
+			<option value="forest">Forest</option>
+			<option value="dungeon">Dungeon</option>
+			<option value="ocean">Ocean</option>
+			<option value="city">City</option>
+			<option value="night">Night</option>
+			<option value="desert">Desert</option>
+		</select>
+<!-- 🏔️Background End ====================================================== -->
+
+
+
+
+<!-- 🧙Player Select ======================================================= -->
+		<select id="playerSelect" onchange="selectPreloaded('player')">
+			<option value="">Add Player</option>
+			<option value="players/Player1.png"> Player1 </option>
+			<option value="players/Player2.png"> Player2 </option>
+			<option value="players/Player3.png"> Player3 </option>
+			<option value="players/Player4.png"> Player4 </option>
+			<option value="players/Player5.png"> Player5 </option>
+			<option value="players/Player6.png"> Player6 </option>
+			<option value="players/Player7.png"> Player7 </option>
+			<option value="players/Player8.png"> Player8 </option>
+		</select>
+<!-- 🧙Player End ========================================================= -->
+
+
+
+<!-- 🐲Enemy Select ======================================================= -->
+		<select id="enemySelect" onchange="selectPreloaded('enemy')">
+			<option value="">Add Enemy</option>
+			<option value="enemies/Beast.png">🐺 Beast</option>
+			<option value="enemies/Dragon.png">🐲 Dragon</option>
+			<option value="enemies/Knight.png">⚔️ Knight</option>
+			<option value="enemies/Mage.png">🔮 Mage</option>
+			<option value="enemies/Undead.png">💀 Undead</option>
+			<option value="enemies/Bandit.png">🗡️ Bandit</option>
+			<option value="enemies/Layer.png">🪤 Layer</option>
+		</select>
+<!-- 🐲Enemy End ========================================================== -->
+
+
+
+		<div>
+			<br>
+			<input id="name" placeholder="Name">
+			<input id="initiative" type="number" placeholder="Initiative">
+		</div>
+
+		<div>
+			<br>
+			<input id="imageUpload" type="file" accept="image/*">
+			<button onclick="addPlayer()">Add To Initative</button>
+		</div>
+
+
+	</div>
+
+</div>
+<!-- CONTROLS End ---------------- -->
+
+
+</div>
+<!-- Main End ---------------- -->
+
+<audio id="defaultSound" src="sounds/default.mp3"></audio>
+
+<script src="script.js"></script>
+</body>
+</html>
